@@ -110,7 +110,7 @@ function App() {
               <img src={ta_logo} alt="Timo Anjala logo" />
               <p>You&apos;re looking at it.</p>
               <p>A simple React application that showcases my skills and projects.</p>
-              <a href="https://github.com/fakemanigh/portfolio-website/" target='_blanc'><button><FontAwesomeIcon icon={faGithub} /><p>View code in GitHub</p></button></a>
+              <a href="https://github.com/fakemanigh/portfolio" target='_blanc'><button><FontAwesomeIcon icon={faGithub} /><p>View code in GitHub</p></button></a>
             </li>
             <li className='card'>
               <h3>TBD</h3>
