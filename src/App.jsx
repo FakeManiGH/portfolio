@@ -66,6 +66,11 @@ function App() {
     return new Date().getFullYear().toString()
   }
 
+  // info alert for photography
+  const showInfoAlert = () => {
+    setAlert({ isOpen: true, message: 'Photography page is coming soon...' })
+  }
+
   return (
     <>
       <Alert alert={alert} setAlert={setAlert} />
@@ -76,7 +81,7 @@ function App() {
         <nav className='button-group header-links icons'>
           <a href="https://www.linkedin.com/in/timo-anjala-iam/" target='_blanc' data-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a>
           <a href="https://github.com/fakemanigh" target='_blanc' data-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
-          <a href="#" data-label="Photography"><FontAwesomeIcon icon={faCameraRetro} /></a>
+          <button onClick={showInfoAlert} data-label="Photography"><FontAwesomeIcon icon={faCameraRetro} /></button>
         </nav>
         <hr />
       </header>

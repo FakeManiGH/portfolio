@@ -125,6 +125,36 @@ button {
       }
     }
   }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    color: #e6e6e6;
+    background-color: #343434;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+
+    :first-child {
+      font-size: 1.3rem;
+      color: #e6e6e6;
+    }
+
+    &:hover {
+      background-color: #399c39;
+
+      &::after {
+        font-family: 'Source Code Pro', monospace;
+        position: absolute;
+        top: 105%;
+        font-size: .8rem;
+        letter-spacing: -1px;
+        content: attr(data-label);
+        animation: 1s linear infinite rotate;
+      }
+    }
+  }
 }
 
 hr{
