@@ -1,7 +1,7 @@
 # Portfolio Website
 ![Timo Anjala Logo](./src/assets/ta_logo_small.png?)
 
-A simple one page portfolio application displaying my skills and projects.
+A simple one page portfolio application to showcase my skills and projects.
 
 ## Dev
 
