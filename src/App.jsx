@@ -15,7 +15,8 @@ import {
   node,
   axios,
   own_image,
-  question
+  question,
+  express
 } from './assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -83,19 +84,18 @@ function App() {
           <a href="https://github.com/fakemanigh" target='_blanc' data-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
           <button onClick={showInfoAlert} data-label="Photography"><FontAwesomeIcon icon={faCameraRetro} /></button>
         </nav>
-        <hr />
       </header>
 
       <nav className='content-navigation'>
-        <a href="#projects"><FontAwesomeIcon icon={faLaptopCode} /><p>Projects</p></a>
-        <a href="#dev-skills"><FontAwesomeIcon icon={faTerminal} /><p>DEV skills</p></a>
-        <a href="#about"><FontAwesomeIcon icon={faUser} /><p>About me</p></a>
-        <a href="#contact"><FontAwesomeIcon icon={faAt} /><p>Contact me</p></a>
+        <a href="#projects"><FontAwesomeIcon icon={faLaptopCode} /><p>PROJECTS</p></a>
+        <a href="#dev-skills"><FontAwesomeIcon icon={faTerminal} /><p>DEV SKILLS</p></a>
+        <a href="#about"><FontAwesomeIcon icon={faUser} /><p>ABOUT ME</p></a>
+        <a href="#contact"><FontAwesomeIcon icon={faAt} /><p>CONTACT</p></a>
       </nav>
 
       <main>
         <section id="projects">
-          <h2>Projects</h2>
+          <h2>&#11208; Projects</h2>
           <p>Here are some of my personal projects worth mentioning.</p>
           <ul className='card-grid'>
             <li className='card'>
@@ -122,73 +122,76 @@ function App() {
           </ul>
         </section>
 
+        <hr />
+
         <section id="dev-skills">
-          <h2>DEV skills</h2>
-          <p>Here are some of my web development languages, frameworks, libraries and tools I use. Everything is not listed here, so ask me for a specific.</p>
+          <h2>&#11208; DEV skills</h2>
+          <p>Here are some of my web development languages, frameworks, libraries and tools I use. Everything is not listed here, so ask me for a specifics.</p>
           <h3>Languages</h3>
           <ul className='small-card-grid'>
             <li className='small-card'>
-              <img src={php} alt="PHP illustration" />
-              <p>Multiple back-end APIs with session, token, and authentication handling. Database querying.</p>
-            </li>
-            <li className='small-card'>
-              <img src={js} alt="JavaScript illustartion" />
-              <p>REST API, Data manipulation and regex. Also, few simple interactive widgets.</p>
-            </li>
-            <li className='small-card'>
-              <img src={ts} alt="Typescript illustration" />
-              <p>Couple of small React apps with TypeScript.</p>
-            </li>
-            <li className='small-card'>
-              <img src={sql} alt="SQL illustration" />
-              <p>Querying and managing relational databases. MySQL, MariaDB.</p>
-            </li>
-            <li className='small-card'>
               <img src={css} alt="CSS illustration" />
-              <p>I don&apos;t like styling frameworks too much, so I usually style everything by hand.</p>
+              <h4>CSS</h4>
             </li>
             <li className='small-card'>
               <img src={html} alt="HTML illustration" />
-              <p>Can&apos;t avoid it. Like playing Tetris.</p>
+              <h4>HTML</h4>
+            </li>
+            <li className='small-card'>
+              <img src={js} alt="JavaScript illustration" />
+              <h4>JavaScript</h4>
             </li>
             <li className='small-card'>
               <img src={md} alt="Markdown illustration" />
-              <p>Markdown for writing documentation and READMEs.</p>
+              <h4>Markdown</h4>
+            </li>
+            <li className='small-card'>
+              <img src={php} alt="PHP illustration" />
+              <h4>PHP</h4>
+            </li>
+            <li className='small-card'>
+              <img src={sql} alt="SQL illustration" />
+              <h4>SQL</h4>
+            </li>
+            <li className='small-card'>
+              <img src={ts} alt="Typescript illustration" />
+              <h4>Typescript</h4>
             </li>
           </ul>
 
           <h3>Frameworks, Libraries & CMS</h3>
           <ul className='small-card-grid'>
             <li className='small-card'>
-              <img src={react} alt="React illustration" />
-              <h4>React</h4>
-              <p>Couple of advanced front-ends for Web APIs, few simple web apps, reusable components, and hooks.</p>
+              <img src={axios} alt="Axios illustration" />
+              <h4>Axios</h4>
+            </li>
+            <li className='small-card'>
+              <img src={express} alt="Express.js illustration" />
+              <h4>Express.js</h4>
             </li>
             <li className='small-card'>
               <img src={bootstrap} alt="Bootstrap illustration" />
-              <h4>Bootrstap</h4>
-              <p>Shortcut for some app stylings. Also, React Bootsrap.</p>
-            </li>
-            <li className='small-card'>
-              <img src={wordpress} alt="WordPress illustration" />
-              <h4>WordPress</h4>
-              <p>Couple of test projects. WooCommerce, and several plugins.</p>
+              <h4>Bootstrap</h4>
             </li>
             <li className='small-card'>
               <img src={node} alt="Node.js illustration" />
               <h4>Node.js</h4>
-              <p>Some small back-end projects. <strong>Express.js</strong>, JWT, and REST API.</p>
             </li>
             <li className='small-card'>
-              <img src={axios} alt="Axios illustration" />
-              <h4>Axios</h4>
-              <p>For fetching data from APIs. Use it a lot with PHP.</p>
+              <img src={react} alt="React illustration" />
+              <h4>React</h4>
             </li>
-          </ul> 
+            <li className='small-card'>
+              <img src={wordpress} alt="WordPress illustration" />
+              <h4>WordPress</h4>
+            </li>
+          </ul>
         </section>
 
+        <hr />
+
         <section id="about">
-          <h2>About me</h2>
+          <h2>&#11208; About me</h2>
           <article className='row'>
             <img src={own_image} alt="" />
 
@@ -202,10 +205,10 @@ function App() {
           </article>
         </section>
 
+        <hr />
+
         <section id="contact">
-          <h2>Contact me</h2>
-          <p>Are you planning a web project or need help with specific part of your project? Let&apos;s talk.</p>
-          <p>I&apos;m also open for longer term work offers.</p>
+          <h2>&#11208; Contact me</h2>
 
           <div className="duo-grid">
             <form onSubmit={handleSubmit}>
@@ -282,9 +285,8 @@ function App() {
       </main>
 
       <footer>
-        <button onClick={() => window.scrollTo(0, 0)}><FontAwesomeIcon icon={faArrowUp} /><p>Back to top</p></button>
+        <button onClick={() => window.scrollTo(0, 0)}><FontAwesomeIcon icon={faArrowUp} /><p>Back to top</p><FontAwesomeIcon icon={faArrowUp} /></button>
         <p>&copy; {getCurrentYear()} Timo Anjala</p>
-        <p>Card icons from <a href="https://www.flaticon.com/" target='_blanc'>flaticon.com</a></p>
       </footer>
     </>
   )

@@ -15,6 +15,7 @@ import node from './node.png';
 import axios from './axios.png';
 import own_image from './own_image.jpg';
 import question from './question.svg';
+import express from './express.png';
 
 export {
   ta_logo,
@@ -32,5 +33,6 @@ export {
   node,
   axios,
   own_image,
-  question
+  question,
+  express
 };
