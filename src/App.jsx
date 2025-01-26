@@ -191,7 +191,7 @@ function App() {
         <hr />
 
         <section id="about">
-          <h2>&#11208; About me</h2>
+          <h2>About me</h2>
           <article className='row'>
             <img src={own_image} alt="" />
 
@@ -208,7 +208,7 @@ function App() {
         <hr />
 
         <section id="contact">
-          <h2>&#11208; Contact me</h2>
+          <h2>Contact me</h2>
 
           <div className="duo-grid">
             <form onSubmit={handleSubmit}>
