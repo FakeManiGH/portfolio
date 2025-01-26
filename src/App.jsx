@@ -95,7 +95,7 @@ function App() {
 
       <main>
         <section id="projects">
-          <h2>&#11208; Projects</h2>
+          <h2>Projects</h2>
           <p>Here are some of my personal projects worth mentioning.</p>
           <ul className='card-grid'>
             <li className='card'>
@@ -125,7 +125,7 @@ function App() {
         <hr />
 
         <section id="dev-skills">
-          <h2>&#11208; DEV skills</h2>
+          <h2>DEV skills</h2>
           <p>Here are some of my web development languages, frameworks, libraries and tools I use. Everything is not listed here, so ask me for a specifics.</p>
           <h3>Languages</h3>
           <ul className='small-card-grid'>
