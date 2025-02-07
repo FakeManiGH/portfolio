@@ -16,11 +16,18 @@ import {
   axios,
   own_image,
   question,
-  express
+  express,
+  tailwind,
+  nextjs,
+  firebase,
+  git,
+  github,
+  vscode,
+  clerk,
 } from './assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faArrowUp, faAt, faCameraRetro, faCoffee, faGlobe, faLaptopCode, faMailBulk, faMailForward, faTerminal, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUp, faAt, faCameraRetro, faCoffee, faGlobe, faLaptopCode, faMailForward, faTerminal, faUser } from '@fortawesome/free-solid-svg-icons'
 import { Alert } from './components'
 import { useState } from 'react'
 import formValidation from './utils/formValidation'
@@ -78,17 +85,17 @@ function App() {
       <header>
         <img className='head-logo' src={ta_logo} alt="Timo Anjala Logo" />
         <h1>Web Developer & ICT Specialist</h1>
-        <p>Also, Free-time nature photographer</p>
+        <p>Welcome to my portfolio website!</p>
         <nav className='button-group header-links icons'>
           <a href="https://www.linkedin.com/in/timo-anjala-iam/" target='_blanc' data-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a>
           <a href="https://github.com/fakemanigh" target='_blanc' data-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
-          <button onClick={showInfoAlert} data-label="Photography"><FontAwesomeIcon icon={faCameraRetro} /></button>
+          <a href="#" onClick={showInfoAlert} data-label="Photography"><FontAwesomeIcon icon={faCameraRetro} /></a>
         </nav>
       </header>
 
       <nav className='content-navigation'>
         <a href="#projects"><FontAwesomeIcon icon={faLaptopCode} /><p>PROJECTS</p></a>
-        <a href="#dev-skills"><FontAwesomeIcon icon={faTerminal} /><p>DEV SKILLS</p></a>
+        <a href="#development-skills"><FontAwesomeIcon icon={faTerminal} /><p>DEVELOPMENT SKILLS</p></a>
         <a href="#about"><FontAwesomeIcon icon={faUser} /><p>ABOUT ME</p></a>
         <a href="#contact"><FontAwesomeIcon icon={faAt} /><p>CONTACT</p></a>
       </nav>
@@ -101,99 +108,136 @@ function App() {
             <li className='card'>
               <h3>React imageBrowser</h3>
               <img src={rib_logo} alt="React imageBrowser logo" />
-              <p>RiB is pre-built image viewing component (node_module) for React applications.</p>
-              <a href="https://fakemanigh.github.io/rib-website/" target='_blanc'><button><FontAwesomeIcon icon={faGlobe} /><p>Visit project page</p></button></a>
-              <a href="https://github.com/fakemanigh/react-image-browser" target='_blanc'><button><FontAwesomeIcon icon={faGithub} /><p>GitHub page</p></button></a>
+              <p>React-image-browser is pre-built image viewing component (node_module) for React applications.</p>
+              <a href="https://fakemanigh.github.io/rib-website/" target='_blanc'><FontAwesomeIcon icon={faGlobe} /> Project website</a>
+              <a href="https://github.com/fakemanigh/react-image-browser" target='_blanc'><FontAwesomeIcon icon={faGithub} /> GitHub</a>
             </li>
             <li className='card'>
               <h3>Portfolio Website</h3>
               <img src={ta_logo} alt="Timo Anjala logo" />
               <p>You&apos;re looking at it.</p>
               <p>A simple React application that showcases my skills and projects.</p>
-              <a href="https://github.com/fakemanigh/portfolio" target='_blanc'><button><FontAwesomeIcon icon={faGithub} /><p>View code in GitHub</p></button></a>
+              <a href="https://github.com/fakemanigh/portfolio" target='_blanc'><FontAwesomeIcon icon={faGithub} /> GitHub</a>
             </li>
             <li className='card'>
               <h3>TBD</h3>
               <img src={question} alt="Question image svg" />
               <p>Maybe your project?</p>
               <p>Let&apos;s talk about it.</p>
-              <a href="#contact"><button><FontAwesomeIcon icon={faAt} /><p>Contact me</p></button></a>
+              <a href="#contact"><FontAwesomeIcon icon={faAt} /> Contact me</a>
             </li>
           </ul>
         </section>
 
         <hr />
 
-        <section id="dev-skills">
-          <h2>DEV skills</h2>
-          <p>Here are some of my web development languages, frameworks, libraries and tools I use. Everything is not listed here, so ask me for a specifics.</p>
+        <section id="development-skills">
+          <h2>Development skills</h2>
+          <p>
+            Here are some of my web development languages, frameworks, libraries and tools I use. Everything is not listed here, so ask me for a specifics.
+            Most icons from <a href="https://flaticon.com" target='_blanc'>flaticon.com</a>.
+          </p>
           <h3>Languages</h3>
           <ul className='small-card-grid'>
             <li className='small-card'>
               <img src={css} alt="CSS illustration" />
-              <h4>CSS</h4>
+              <p>CSS</p>
             </li>
             <li className='small-card'>
               <img src={html} alt="HTML illustration" />
-              <h4>HTML</h4>
+              <p>HTML</p>
             </li>
             <li className='small-card'>
               <img src={js} alt="JavaScript illustration" />
-              <h4>JavaScript</h4>
+              <p>JavaScript</p>
             </li>
             <li className='small-card'>
               <img src={md} alt="Markdown illustration" />
-              <h4>Markdown</h4>
+              <p>Markdown</p>
             </li>
             <li className='small-card'>
               <img src={php} alt="PHP illustration" />
-              <h4>PHP</h4>
+              <p>PHP</p>
             </li>
             <li className='small-card'>
               <img src={sql} alt="SQL illustration" />
-              <h4>SQL</h4>
+              <p>SQL</p>
             </li>
             <li className='small-card'>
               <img src={ts} alt="Typescript illustration" />
-              <h4>Typescript</h4>
+              <p>Typescript</p>
             </li>
           </ul>
 
-          <h3>Frameworks, Libraries & CMS</h3>
+          <h3>Frameworks & Libraries</h3>
           <ul className='small-card-grid'>
             <li className='small-card'>
               <img src={axios} alt="Axios illustration" />
-              <h4>Axios</h4>
-            </li>
-            <li className='small-card'>
-              <img src={express} alt="Express.js illustration" />
-              <h4>Express.js</h4>
+              <p>Axios</p>
             </li>
             <li className='small-card'>
               <img src={bootstrap} alt="Bootstrap illustration" />
-              <h4>Bootstrap</h4>
+              <p>Bootstrap</p>
+            </li>
+            <li className='small-card'>
+              <img src={express} alt="Express.js illustration" />
+              <p>Express.js</p>
+            </li>
+            <li className='small-card'>
+              <img src={firebase} alt="Firebase illustration" />
+              <p>Firebase</p>
+            </li>
+            <li className='small-card'>
+              <img src={nextjs} alt="Next.js illustration" />
+              <p>Next.js</p>
             </li>
             <li className='small-card'>
               <img src={node} alt="Node.js illustration" />
-              <h4>Node.js</h4>
+              <p>Node.js</p>
             </li>
             <li className='small-card'>
               <img src={react} alt="React illustration" />
-              <h4>React</h4>
+              <p>React</p>
+            </li>
+            <li className='small-card'>
+              <img src={tailwind} alt="TailwindCSS illustration" />
+              <p>TailwindCSS</p>
+            </li>
+          </ul>
+
+          <h3>Tools & CMS</h3>
+          <ul className='small-card-grid'>
+            <li className='small-card'>
+              <img src={clerk} alt="Clerk.io illustration" />
+              <p>Clerk.io</p>
+            </li>
+            <li className='small-card'>
+              <img src={git} alt="Git icon illustration" />
+              <p>Git</p>
+            </li>
+            <li className='small-card'>
+              <img src={github} alt="Github logo illustration" />
+              <p>GitHub</p>
+            </li>
+            <li className='small-card'>
+              <img src={vscode} alt="Visual Studio Code logo" />
+              <p>VSCode</p>
             </li>
             <li className='small-card'>
               <img src={wordpress} alt="WordPress illustration" />
-              <h4>WordPress</h4>
+              <p>WordPress</p>
             </li>
           </ul>
         </section>
+
+        {/* TODO: Add more skills */}
 
         <hr />
 
         <section id="about">
           <h2>About me</h2>
-          <article className='row'>
-            <img src={own_image} alt="" />
+          <div className='row'>
+            <img src={own_image} alt="Photograph of author" />
 
             <div className="column">
               <h3>Hi,</h3>
@@ -202,7 +246,7 @@ function App() {
                 I&apos;m always eager to learn new things and improve my skills. My motto is &ldquo;Learn somehting new every day&ldquo;.</p>
               <p>When I&apos;m not coding, I like to spend time in nature taking photos. I also enjoy playing video games and watching movies.</p>
             </div>
-          </article>
+          </div>
         </section>
 
         <hr />
@@ -211,82 +255,75 @@ function App() {
           <h2>Contact me</h2>
 
           <div className="duo-grid">
-            <form onSubmit={handleSubmit}>
-              <fieldset>
-                <legend><FontAwesomeIcon icon={faMailBulk} /> Send a message</legend>
+            <form onSubmit={handleSubmit} className="column">
+              <div className="form-group">
+                <label htmlFor="name">Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  placeholder='Your name...'
+                />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="name">Name *</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name"
-                    placeholder='Your name...'
-                  />
-                </div>
+              <div className="form-group">
+                <label htmlFor="phone">Phone</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  placeholder='Phone number...'
+                />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="phone">Phone</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone"
-                    placeholder='Phone number...'
-                  />
-                </div>
+              <div className="form-group">
+                <label htmlFor="email">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  placeholder='Your email...'
+                />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email"
-                    placeholder='Your email...'
-                  />
-                </div>
+              <div className="form-group">
+                <label htmlFor="subject">Subject *</label>
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject"
+                  placeholder='Subject...'
+                />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="subject">Subject *</label>
-                  <input 
-                    type="text" 
-                    id="subject" 
-                    name="subject"
-                    placeholder='Subject...'
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
-                  <textarea 
-                    id="message" 
-                    name="message"
-                    placeholder='Threats, offers, or just say hi...'
-                    rows={4}
-                  />
-                </div>
-                
-                <br />
-                <button type="submit"><FontAwesomeIcon icon={faMailForward} /><p>Send message</p></button>
-              </fieldset>
+              <div className="form-group">
+                <label htmlFor="message">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  placeholder='Threats, offers, or just say hi...'
+                  rows={4}
+                />
+              </div>
+              
+              <button type="submit"><FontAwesomeIcon icon={faMailForward} /> Send message </button>
             </form>
 
-            <fieldset>
-              <legend><FontAwesomeIcon icon={faAt} /> Alternatives</legend>
+            <div className="column">        
               <p>You can send me a message via LinkedIn.</p>
-              <a href="https://www.linkedin.com/in/timo-anjala-iam/" target='_blanc'><button><FontAwesomeIcon icon={faLinkedin} /><p>LinkedIn</p></button></a>
-              <br />
+              <a href="https://www.linkedin.com/in/timo-anjala-iam/" target='_blanc'><button><FontAwesomeIcon icon={faLinkedin} /> LinkedIn</button></a>
               <p>
                 I&apos;m always open for good cup of coffee, so if your local in Finland or visiting, lets arrange meeting with great cup of brew <FontAwesomeIcon icon={faCoffee} />. 
                 Send a message with subject &ldquo;Coffee&ldquo; / &ldquo;Kahvit&ldquo;.
-              </p>    
-            </fieldset>
+              </p>
+            </div>   
           </div>
         </section>
       </main>
 
       <footer>
-        <button onClick={() => window.scrollTo(0, 0)}><FontAwesomeIcon icon={faArrowUp} /><p>Back to top</p><FontAwesomeIcon icon={faArrowUp} /></button>
-        <p>&copy; {getCurrentYear()} Timo Anjala</p>
+        <a href="#" onClick={() => window.scrollTo(0, 0)}><FontAwesomeIcon icon={faArrowUp} /> Back to top</a>
+        <p>Messy code &copy; {getCurrentYear()} Timo Anjala</p>
       </footer>
     </>
   )

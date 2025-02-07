@@ -11,7 +11,7 @@
 body {
   position: relative;
   background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
+  background-image: linear-gradient(135deg, #000000 0%, #04619f 74%);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -53,11 +53,13 @@ h3 {
 
 p, li {
   color: #e6e6e6;
+  font-size: .9rem;
   font-weight: 400;
   font-family: 'Source Code Pro', monospace;
 }
 
 a {
+  font-size: .9rem;
   color: #49a3f7;
   text-decoration: none;
 }
@@ -73,88 +75,19 @@ button {
   gap: 10px;
   padding: 12px 16px;
   color: #e6e6e6;
-  background-color: #000000;
+  background: linear-gradient(135deg, #111 0%, #000 100%);
   font-family: 'Source Code Pro', monospace;
-  font-size: 1rem;
+  font-size: .9rem;
   border: none;
   border-radius: 10px;
   width: -moz-max-content;
   width: max-content;
   overflow: hidden;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 
   &:hover {
-    background-color: #0084ff;
-  }
-}
-
-.button-group {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-
-  &.icons {
-      font-size: 1.5rem;
-
-      a {
-        padding: 12px;
-      }
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    color: #e6e6e6;
-    background-color: #000000;
-    border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s;
-
-    &:hover {
-      background-color: #0084ff;
-
-      &::after {
-        font-family: 'Source Code Pro', monospace;
-        position: absolute;
-        top: 105%;
-        font-size: .8rem;
-        letter-spacing: -1px;
-        content: attr(data-label);
-        animation: 1s linear infinite rotate;
-      }
-    }
-  }
-
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    color: #e6e6e6;
-    background-color: #000000;
-    border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s;
-
-    :first-child {
-      font-size: 1.3rem;
-      color: #e6e6e6;
-    }
-
-    &:hover {
-      background-color: #0084ff;
-
-      &::after {
-        font-family: 'Source Code Pro', monospace;
-        position: absolute;
-        top: 105%;
-        font-size: .8rem;
-        letter-spacing: -1px;
-        content: attr(data-label);
-        animation: 1s linear infinite rotate;
-      }
-    }
+    color: #0084ff;
   }
 }
 
@@ -178,31 +111,11 @@ ul {
   list-style-type: none;
 }
 
-fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  background-color: #11111150;
-  backdrop-filter: blur(5px);
-  border-radius: 25px;
-  border: none;
-  box-shadow: 1px 1px 3px #00000099;
-}
-
-legend {
-  color: #e6e6e6;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 0 5px;
-}
-
 .form-group {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -242,16 +155,14 @@ input, textarea {
   align-items: center;
   box-sizing: border-box;
   position: fixed;
-  top: 20px;
-  left: 20px;
-  width: calc(100% - 40px);
+  margin: 10px;
+  width: calc(100% - 20px);
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 20px 10px;
+  padding: 20px;
   font-family: 'Source Code Pro', monospace;
-  background-color: #e6e6e699;
-  backdrop-filter: blur(5px);
+  background-color: #e6e6e6;
   border-radius: 5px;
   box-shadow: 1px 1px 8px #00000099;
   z-index: 20;
@@ -274,22 +185,13 @@ input, textarea {
       background-color: #0084ff;
     }
   }
+}
 
-  &.success {
-    border-left: 15px solid #399c39;
-    border-right: 15px solid #399c39;
-  }
-
-  &.error {
-    border-left: 15px solid #ff0000;
-    border-right: 15px solid #ff0000;
-
-    button {
-      &:hover {
-        background-color: #ff0000;
-      }
-    }
-  }
+.alert-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 /* FLEX MANAGEMENT */
@@ -309,7 +211,15 @@ input, textarea {
 .column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+}
+
+.row img, .column img {
+  width: 200px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 
@@ -331,6 +241,18 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  gap: 15px;
+
+  a {
+    color: #e6e6e6;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #0084ff;
+    }
+  }
 }
 
 .head-logo {
@@ -345,7 +267,7 @@ header {
   gap: 5px;
   padding: 10px;
   flex-wrap: wrap;
-  max-width: 1600px;
+  max-width: 1280px;
   margin: 0 auto;
 
   a {
@@ -354,9 +276,9 @@ header {
     align-items: center;
     gap: 5px;
     color: #e6e6e6;
-    background-color: #000000;
+    background: linear-gradient(135deg, #111 0%, #000 100%);
     font-size: 1.1rem;
-    border-radius: 50px;
+    border-radius: 10px;
     overflow: hidden;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 
@@ -396,7 +318,7 @@ main {
   position: relative;
   gap: 20px;
   padding: 30px 10px 50px 10px;
-  max-width: 1600px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -405,26 +327,6 @@ section {
   flex-direction: column;
   position: relative;
   gap: 20px;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 20px;
-  padding: 20px;
-  background-color: #00000050;
-  backdrop-filter: blur(5px);
-  border-radius: 25px;
-  box-shadow: 1px 1px 3px #00000099;
-
-  img {
-    width: 200px;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 10px;
-  }
 }
 
 .duo-grid {
@@ -440,7 +342,7 @@ article {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 10px;
 }
 
 .small-card-grid {
@@ -452,16 +354,21 @@ article {
 .card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  background-color: #00000050;
-  backdrop-filter: blur(5px);
-  border-radius: 25px;
+  gap: 15px;
+  padding: 10px;
+  background-color: #11111199;
+  border-radius: 10px;
   box-shadow: 1px 1px 3px #00000099;
   transition: box-shadow 0.3s;
 
   a {
+    color: #0084ff;
     margin-top: auto;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #e5e5e5;
+    }
   }
 
   img {
@@ -479,35 +386,11 @@ article {
   align-items: center;
   text-align: center;
   gap: 10px;
-  padding: 20px;
-  background-color: #00000050;
-  backdrop-filter: blur(5px);
-  border-radius: 20px;
+  padding: 10px;
+  background-color: #11111199;
+  border-radius: 10px;
   box-shadow: 1px 1px 3px #00000099;
   transition: box-shadow 0.3s;
-
-  h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-
-  p {
-    font-size: 0.8rem;
-  }
-
-  a {
-    padding: 5px 10px;
-    color: #e6e6e6;
-    background-color: #111111;
-    border-radius: 5px;
-    justify-self: end;
-    margin-top: auto;
-    transition: color 0.3s;
-
-    &:hover {
-      color: #399c39;
-    }
-  }
 
   img {
     width: 50px;
